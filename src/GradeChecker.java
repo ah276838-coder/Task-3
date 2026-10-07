@@ -7,4 +7,14 @@ public class GradeChecker {
         else if (score >= 50) return "D";
         else return "E";
     }
+
+    public static boolean hasPassed(int score) {
+        return score >= 50;
+    }
+
+    public static void printGradeReport(String candidateName, int score) {
+        String grade = getGrade(score);
+        String status = hasPassed(score) ? "PASSED" : "FAILED";
+        System.out.println("Candidate: " + candidateName + " | Score: " + score + " | Grade: " + grade + " | Status: " + status);
+    }
 }
